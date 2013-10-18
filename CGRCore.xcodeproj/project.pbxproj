@@ -15,6 +15,16 @@
 		38947D84180E11170046A5B4 /* CGRCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947D67180E11170046A5B4 /* CGRCore.framework */; };
 		38947D8A180E11170046A5B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38947D88180E11170046A5B4 /* InfoPlist.strings */; };
 		38947D8C180E11170046A5B4 /* CGRCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38947D8B180E11170046A5B4 /* CGRCoreTests.m */; };
+		38947D9A180E11470046A5B4 /* CGRDoubleQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947D96180E11470046A5B4 /* CGRDoubleQueue.h */; };
+		38947D9B180E11470046A5B4 /* CGRConcurrentVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947D97180E11470046A5B4 /* CGRConcurrentVector.h */; };
+		38947D9C180E11470046A5B4 /* CGRConcurrentSortedVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947D98180E11470046A5B4 /* CGRConcurrentSortedVector.h */; };
+		38947DA5180E11770046A5B4 /* CGRGraph_BasicTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA0180E11770046A5B4 /* CGRGraph_BasicTypes.h */; };
+		38947DA6180E11770046A5B4 /* CGRGraph_BasicTypes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38947DA1180E11770046A5B4 /* CGRGraph_BasicTypes.mm */; };
+		38947DA7180E11770046A5B4 /* CGRGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA2180E11770046A5B4 /* CGRGraph.h */; };
+		38947DA8180E11770046A5B4 /* CGRGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38947DA3180E11770046A5B4 /* CGRGraph.mm */; };
+		38947DA9180E11770046A5B4 /* CGRGraph_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA4180E11770046A5B4 /* CGRGraph_API.h */; };
+		38C6FCF0180FAEB0005F512A /* CGRVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C6FCEE180FAEB0005F512A /* CGRVector.h */; };
+		38C6FCF1180FAEB0005F512A /* CGRVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C6FCEF180FAEB0005F512A /* CGRVector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +53,16 @@
 		38947D87180E11170046A5B4 /* CGRCoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CGRCoreTests-Info.plist"; sourceTree = "<group>"; };
 		38947D89180E11170046A5B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		38947D8B180E11170046A5B4 /* CGRCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGRCoreTests.m; sourceTree = "<group>"; };
+		38947D96180E11470046A5B4 /* CGRDoubleQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRDoubleQueue.h; sourceTree = "<group>"; };
+		38947D97180E11470046A5B4 /* CGRConcurrentVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRConcurrentVector.h; sourceTree = "<group>"; };
+		38947D98180E11470046A5B4 /* CGRConcurrentSortedVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRConcurrentSortedVector.h; sourceTree = "<group>"; };
+		38947DA0180E11770046A5B4 /* CGRGraph_BasicTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGraph_BasicTypes.h; sourceTree = "<group>"; };
+		38947DA1180E11770046A5B4 /* CGRGraph_BasicTypes.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGraph_BasicTypes.mm; sourceTree = "<group>"; };
+		38947DA2180E11770046A5B4 /* CGRGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGraph.h; sourceTree = "<group>"; };
+		38947DA3180E11770046A5B4 /* CGRGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGraph.mm; sourceTree = "<group>"; };
+		38947DA4180E11770046A5B4 /* CGRGraph_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGraph_API.h; sourceTree = "<group>"; };
+		38C6FCEE180FAEB0005F512A /* CGRVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRVector.h; sourceTree = "<group>"; };
+		38C6FCEF180FAEB0005F512A /* CGRVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGRVector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +129,8 @@
 		38947D70180E11170046A5B4 /* CGRCore */ = {
 			isa = PBXGroup;
 			children = (
+				38947D95180E11390046A5B4 /* Tools */,
+				38947D9E180E114D0046A5B4 /* Graphs */,
 				38947D77180E11170046A5B4 /* CGRCore.h */,
 				38947D78180E11170046A5B4 /* CGRCore.m */,
 				38947D71180E11170046A5B4 /* Supporting Files */,
@@ -144,6 +166,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		38947D95180E11390046A5B4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				38947D96180E11470046A5B4 /* CGRDoubleQueue.h */,
+				38947D97180E11470046A5B4 /* CGRConcurrentVector.h */,
+				38947D98180E11470046A5B4 /* CGRConcurrentSortedVector.h */,
+				38C6FCEE180FAEB0005F512A /* CGRVector.h */,
+				38C6FCEF180FAEB0005F512A /* CGRVector.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		38947D9E180E114D0046A5B4 /* Graphs */ = {
+			isa = PBXGroup;
+			children = (
+				38947D9F180E11630046A5B4 /* CGRGraph */,
+			);
+			name = Graphs;
+			sourceTree = "<group>";
+		};
+		38947D9F180E11630046A5B4 /* CGRGraph */ = {
+			isa = PBXGroup;
+			children = (
+				38947DA0180E11770046A5B4 /* CGRGraph_BasicTypes.h */,
+				38947DA1180E11770046A5B4 /* CGRGraph_BasicTypes.mm */,
+				38947DA2180E11770046A5B4 /* CGRGraph.h */,
+				38947DA3180E11770046A5B4 /* CGRGraph.mm */,
+				38947DA4180E11770046A5B4 /* CGRGraph_API.h */,
+			);
+			name = CGRGraph;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -151,6 +205,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38947DA5180E11770046A5B4 /* CGRGraph_BasicTypes.h in Headers */,
+				38947DA9180E11770046A5B4 /* CGRGraph_API.h in Headers */,
+				38947DA7180E11770046A5B4 /* CGRGraph.h in Headers */,
+				38947D9C180E11470046A5B4 /* CGRConcurrentSortedVector.h in Headers */,
+				38C6FCF0180FAEB0005F512A /* CGRVector.h in Headers */,
+				38947D9A180E11470046A5B4 /* CGRDoubleQueue.h in Headers */,
+				38947D9B180E11470046A5B4 /* CGRConcurrentVector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +310,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38947DA8180E11770046A5B4 /* CGRGraph.mm in Sources */,
+				38C6FCF1180FAEB0005F512A /* CGRVector.m in Sources */,
+				38947DA6180E11770046A5B4 /* CGRGraph_BasicTypes.mm in Sources */,
 				38947D79180E11170046A5B4 /* CGRCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +512,7 @@
 				38947D91180E11170046A5B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38947D92180E11170046A5B4 /* Build configuration list for PBXNativeTarget "CGRCoreTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +521,7 @@
 				38947D94180E11170046A5B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
