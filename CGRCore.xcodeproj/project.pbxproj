@@ -24,7 +24,7 @@
 		38947DA8180E11770046A5B4 /* CGRGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38947DA3180E11770046A5B4 /* CGRGraph.mm */; };
 		38947DA9180E11770046A5B4 /* CGRGraph_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA4180E11770046A5B4 /* CGRGraph_API.h */; };
 		38C6FCF0180FAEB0005F512A /* CGRVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C6FCEE180FAEB0005F512A /* CGRVector.h */; };
-		38C6FCF1180FAEB0005F512A /* CGRVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C6FCEF180FAEB0005F512A /* CGRVector.m */; };
+		38C6FCF1180FAEB0005F512A /* CGRVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38C6FCEF180FAEB0005F512A /* CGRVector.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,8 @@
 		38947DA3180E11770046A5B4 /* CGRGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGraph.mm; sourceTree = "<group>"; };
 		38947DA4180E11770046A5B4 /* CGRGraph_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGraph_API.h; sourceTree = "<group>"; };
 		38C6FCEE180FAEB0005F512A /* CGRVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRVector.h; sourceTree = "<group>"; };
-		38C6FCEF180FAEB0005F512A /* CGRVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGRVector.m; sourceTree = "<group>"; };
+		38C6FCEF180FAEB0005F512A /* CGRVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRVector.mm; sourceTree = "<group>"; };
+		38EF90D5182619E500108947 /* CGRConcurrentBST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRConcurrentBST.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,8 +173,9 @@
 				38947D96180E11470046A5B4 /* CGRDoubleQueue.h */,
 				38947D97180E11470046A5B4 /* CGRConcurrentVector.h */,
 				38947D98180E11470046A5B4 /* CGRConcurrentSortedVector.h */,
+				38EF90D5182619E500108947 /* CGRConcurrentBST.h */,
 				38C6FCEE180FAEB0005F512A /* CGRVector.h */,
-				38C6FCEF180FAEB0005F512A /* CGRVector.m */,
+				38C6FCEF180FAEB0005F512A /* CGRVector.mm */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -311,7 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38947DA8180E11770046A5B4 /* CGRGraph.mm in Sources */,
-				38C6FCF1180FAEB0005F512A /* CGRVector.m in Sources */,
+				38C6FCF1180FAEB0005F512A /* CGRVector.mm in Sources */,
 				38947DA6180E11770046A5B4 /* CGRGraph_BasicTypes.mm in Sources */,
 				38947D79180E11170046A5B4 /* CGRCore.m in Sources */,
 			);
