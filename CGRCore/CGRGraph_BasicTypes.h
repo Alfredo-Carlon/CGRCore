@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 Alfredo Cruz. All rights reserved.
 //
 
-#import "CGRConcurrentSortedVector.h"
+//#import "CGRConcurrentSortedVector.h"
+#import "CGRConcurrentBST.h"
 //#import <Foundation/Foundation.h>
 
 struct CGREdge;
@@ -19,7 +20,7 @@ typedef struct CGRVertex
     unsigned int color,mark; //A couple of markers for the vertex
     //NSMutableDictionary *vetexInfo; //A pointer for extra data
     int32_t ticketDispenser;
-    CGRConcurrentSortedVector<CGREdge> *vertexAdjacencyList; //The adjacency list for the vertex
+    CGRConcurrentBST<CGREdge> *vertexAdjacencyList; //The adjacency list for the vertex
 } CGRVertex;
 
 
