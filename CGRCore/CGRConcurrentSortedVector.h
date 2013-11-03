@@ -12,8 +12,12 @@
 #define DEFAULT_CSV_CHUNK_SIZE 10000
 #define DEFAULT_CSV_CHUNKS_LIST_SIZE 1000
 #define DEFAULT_CSV_ADITIONAL_SIZE 20
+
+
 #include <libkern/OSAtomic.h>
 #include <stdlib.h>
+
+
 template <class VECTOR_DATA>
 class CGRConcurrentSortedVector
 {
