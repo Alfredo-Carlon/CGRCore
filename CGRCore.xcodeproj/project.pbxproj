@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38014EA918765D210068BF22 /* CGRMapTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 38014EA818765B9F0068BF22 /* CGRMapTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		380DE37C1829B21A00716109 /* CGRMemoryManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 380DE37A1829B21A00716109 /* CGRMemoryManager.mm */; };
+		380DE37D1829B21A00716109 /* CGRMemoryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 380DE37B1829B21A00716109 /* CGRMemoryManager.h */; };
+		380F724318DD6BC600860572 /* CGRGeometricGraph_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 3882100B183B481E00587F3F /* CGRGeometricGraph_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		380F724418DD6BDF00860572 /* CGRAVLTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 38A117401832C253004CE1E3 /* CGRAVLTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		383D0800182CA7C8000D64EF /* CGRCommonTypes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 383D07FE182CA7C8000D64EF /* CGRCommonTypes.mm */; };
+		383D0801182CA7C8000D64EF /* CGRCommonTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 383D07FF182CA7C8000D64EF /* CGRCommonTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38754B3E18CD7F1700BF88DB /* CGRCircularVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38754B3C18CD790500BF88DB /* CGRCircularVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		387EA2F319F868F500CB71D3 /* CGRGeometricDirectedGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 387EA2F119F868F500CB71D3 /* CGRGeometricDirectedGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		387EA2F419F868F500CB71D3 /* CGRGeometricDirectedGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = 387EA2F219F868F500CB71D3 /* CGRGeometricDirectedGraph.mm */; };
+		387EA2F619F8B75D00CB71D3 /* CGRGeometricDirectedGraph_BasicTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 387EA2F519F8698700CB71D3 /* CGRGeometricDirectedGraph_BasicTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		387EA2F719F8B76200CB71D3 /* CGRGeometricDirectedGraph_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 387EA2F019F8683B00CB71D3 /* CGRGeometricDirectedGraph_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		387EA2FA19F8C49B00CB71D3 /* CGRGeometricCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 387EA2F819F8C49B00CB71D3 /* CGRGeometricCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		387EA2FB19F8C49B00CB71D3 /* CGRGeometricCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 387EA2F919F8C49B00CB71D3 /* CGRGeometricCommon.mm */; };
+		3882100F183B4D9E00587F3F /* CGRVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38A1174B1834448D004CE1E3 /* CGRVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38947D6B180E11170046A5B4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947D6A180E11170046A5B4 /* Cocoa.framework */; };
 		38947D75180E11170046A5B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38947D73180E11170046A5B4 /* InfoPlist.strings */; };
 		38947D79180E11170046A5B4 /* CGRCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 38947D78180E11170046A5B4 /* CGRCore.m */; };
@@ -14,17 +29,41 @@
 		38947D81180E11170046A5B4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947D6A180E11170046A5B4 /* Cocoa.framework */; };
 		38947D84180E11170046A5B4 /* CGRCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38947D67180E11170046A5B4 /* CGRCore.framework */; };
 		38947D8A180E11170046A5B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38947D88180E11170046A5B4 /* InfoPlist.strings */; };
-		38947D8C180E11170046A5B4 /* CGRCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38947D8B180E11170046A5B4 /* CGRCoreTests.m */; };
-		38947D9A180E11470046A5B4 /* CGRDoubleQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947D96180E11470046A5B4 /* CGRDoubleQueue.h */; };
+		38947D8C180E11170046A5B4 /* CGRCoreTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38947D8B180E11170046A5B4 /* CGRCoreTests.mm */; };
+		38947D9A180E11470046A5B4 /* CGRDoubleQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947D96180E11470046A5B4 /* CGRDoubleQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38947D9B180E11470046A5B4 /* CGRConcurrentVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947D97180E11470046A5B4 /* CGRConcurrentVector.h */; };
-		38947D9C180E11470046A5B4 /* CGRConcurrentSortedVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947D98180E11470046A5B4 /* CGRConcurrentSortedVector.h */; };
-		38947DA5180E11770046A5B4 /* CGRGraph_BasicTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA0180E11770046A5B4 /* CGRGraph_BasicTypes.h */; };
+		38947DA5180E11770046A5B4 /* CGRGraph_BasicTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA0180E11770046A5B4 /* CGRGraph_BasicTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38947DA6180E11770046A5B4 /* CGRGraph_BasicTypes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38947DA1180E11770046A5B4 /* CGRGraph_BasicTypes.mm */; };
-		38947DA7180E11770046A5B4 /* CGRGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA2180E11770046A5B4 /* CGRGraph.h */; };
+		38947DA7180E11770046A5B4 /* CGRGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA2180E11770046A5B4 /* CGRGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38947DA8180E11770046A5B4 /* CGRGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38947DA3180E11770046A5B4 /* CGRGraph.mm */; };
-		38947DA9180E11770046A5B4 /* CGRGraph_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA4180E11770046A5B4 /* CGRGraph_API.h */; };
-		38C6FCF0180FAEB0005F512A /* CGRVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C6FCEE180FAEB0005F512A /* CGRVector.h */; };
-		38C6FCF1180FAEB0005F512A /* CGRVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38C6FCEF180FAEB0005F512A /* CGRVector.mm */; };
+		38947DA9180E11770046A5B4 /* CGRGraph_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 38947DA4180E11770046A5B4 /* CGRGraph_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38A117441832C2FE004CE1E3 /* CGRGeometricGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 38A117421832C2FE004CE1E3 /* CGRGeometricGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38A117451832C2FE004CE1E3 /* CGRGeometricGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38A117431832C2FE004CE1E3 /* CGRGeometricGraph.mm */; };
+		38A117481832C337004CE1E3 /* CGRGeometricGraph_BasicTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 38A117461832C337004CE1E3 /* CGRGeometricGraph_BasicTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38ACE5B71BF42AF300C15FEB /* CGRGraph_Notifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 38ACE5B61BF42A7700C15FEB /* CGRGraph_Notifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38AD40301BF1725100AD3ECF /* CGRGeometricGraph_Constrains.h in Headers */ = {isa = PBXBuildFile; fileRef = 38AD402F1BF1717600AD3ECF /* CGRGeometricGraph_Constrains.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38B358F6186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = 38B358F4186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38B358F7186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38B358F5186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.mm */; };
+		38CF1C2D186CE4FA0072CC5D /* CGRDrawableGraph_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 38CF1C2C186CE3D00072CC5D /* CGRDrawableGraph_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38CF1C2F186CEEE90072CC5D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CF1C2E186CEEE90072CC5D /* OpenGL.framework */; };
+		38D09B141B3D293A00926E50 /* CGRGeometricGraph_Notifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D09B131B3D284400926E50 /* CGRGeometricGraph_Notifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38D5A11F1A1D28B8005AF331 /* CGRPolygonCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D5A11D1A1D28B8005AF331 /* CGRPolygonCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38D6F01A1A3F813A00575761 /* CGRLinearStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D6F0191A3F7AFF00575761 /* CGRLinearStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38D9E3F519F96840009416B1 /* CGR2DGraphDrawing_BasicTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D9E3F419F967C7009416B1 /* CGR2DGraphDrawing_BasicTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38D9E3F819F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D9E3F619F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38D9E3F919F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38D9E3F719F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.mm */; };
+		38D9E3FC19F9713E009416B1 /* CGRGeometricDirGraphDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D9E3FA19F9713E009416B1 /* CGRGeometricDirGraphDrawing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38D9E3FD19F9713E009416B1 /* CGRGeometricDirGraphDrawing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38D9E3FB19F9713E009416B1 /* CGRGeometricDirGraphDrawing.mm */; };
+		38E0CE4B1A1413D400FDBA3A /* CGRCircularList.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E0CE4A1A13CBAC00FDBA3A /* CGRCircularList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38E1251D19F5ADF0005DACA8 /* CGRDirectedGraph_BasicTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E1251B19F5ADF0005DACA8 /* CGRDirectedGraph_BasicTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38E1252219F5BCCD005DACA8 /* CGRDirectedGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E1252019F5BCCD005DACA8 /* CGRDirectedGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38E1252319F5BCCD005DACA8 /* CGRDirectedGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38E1252119F5BCCD005DACA8 /* CGRDirectedGraph.mm */; };
+		38E1252419F5BDE1005DACA8 /* CGRDirectedGraph_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E1251F19F5BAC2005DACA8 /* CGRDirectedGraph_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38E6EB6F1A632567008FF780 /* CGRAVLTree_AB.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E6EB6E1A6324C0008FF780 /* CGRAVLTree_AB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38EE1B501AA624E700DEE5EC /* CGRSimplePolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 38EE1B4E1AA624E700DEE5EC /* CGRSimplePolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38EE1B511AA624E700DEE5EC /* CGRSimplePolygon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38EE1B4F1AA624E700DEE5EC /* CGRSimplePolygon.mm */; };
+		38EE1B551AA66C9000DEE5EC /* CGRSimplePolygonDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 38EE1B531AA66C9000DEE5EC /* CGRSimplePolygonDrawer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38EE1B561AA66C9000DEE5EC /* CGRSimplePolygonDrawer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38EE1B541AA66C9000DEE5EC /* CGRSimplePolygonDrawer.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +77,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38014EA818765B9F0068BF22 /* CGRMapTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRMapTree.h; sourceTree = "<group>"; };
+		380DE37A1829B21A00716109 /* CGRMemoryManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRMemoryManager.mm; sourceTree = "<group>"; };
+		380DE37B1829B21A00716109 /* CGRMemoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRMemoryManager.h; sourceTree = "<group>"; };
+		383D07F8182CA625000D64EF /* CGRExplorationGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRExplorationGraph.h; sourceTree = "<group>"; };
+		383D07F9182CA625000D64EF /* CGRExplorationGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRExplorationGraph.mm; sourceTree = "<group>"; };
+		383D07FC182CA637000D64EF /* CGRExplorationGraph_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRExplorationGraph_API.h; sourceTree = "<group>"; };
+		383D07FE182CA7C8000D64EF /* CGRCommonTypes.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRCommonTypes.mm; sourceTree = "<group>"; };
+		383D07FF182CA7C8000D64EF /* CGRCommonTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRCommonTypes.h; sourceTree = "<group>"; };
+		38754B3C18CD790500BF88DB /* CGRCircularVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRCircularVector.h; sourceTree = "<group>"; };
+		387EA2F019F8683B00CB71D3 /* CGRGeometricDirectedGraph_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRGeometricDirectedGraph_API.h; sourceTree = "<group>"; };
+		387EA2F119F868F500CB71D3 /* CGRGeometricDirectedGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGeometricDirectedGraph.h; sourceTree = "<group>"; };
+		387EA2F219F868F500CB71D3 /* CGRGeometricDirectedGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGeometricDirectedGraph.mm; sourceTree = "<group>"; };
+		387EA2F519F8698700CB71D3 /* CGRGeometricDirectedGraph_BasicTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRGeometricDirectedGraph_BasicTypes.h; sourceTree = "<group>"; };
+		387EA2F819F8C49B00CB71D3 /* CGRGeometricCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGeometricCommon.h; sourceTree = "<group>"; };
+		387EA2F919F8C49B00CB71D3 /* CGRGeometricCommon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGeometricCommon.mm; sourceTree = "<group>"; };
+		3882100B183B481E00587F3F /* CGRGeometricGraph_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRGeometricGraph_API.h; sourceTree = "<group>"; };
+		388481D0182C4E8A0062F1E0 /* CGRConcurrentStaticVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRConcurrentStaticVector.h; sourceTree = "<group>"; };
+		388481D2182C4FC20062F1E0 /* CGRExplorationGraph_BasicTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRExplorationGraph_BasicTypes.h; sourceTree = "<group>"; };
+		388481D3182C4FC20062F1E0 /* CGRExplorationGraph_BasicTypes.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRExplorationGraph_BasicTypes.mm; sourceTree = "<group>"; };
 		38947D67180E11170046A5B4 /* CGRCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CGRCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38947D6A180E11170046A5B4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		38947D6D180E11170046A5B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,7 +110,7 @@
 		38947D7F180E11170046A5B4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		38947D87180E11170046A5B4 /* CGRCoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CGRCoreTests-Info.plist"; sourceTree = "<group>"; };
 		38947D89180E11170046A5B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		38947D8B180E11170046A5B4 /* CGRCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGRCoreTests.m; sourceTree = "<group>"; };
+		38947D8B180E11170046A5B4 /* CGRCoreTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRCoreTests.mm; sourceTree = "<group>"; };
 		38947D96180E11470046A5B4 /* CGRDoubleQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRDoubleQueue.h; sourceTree = "<group>"; };
 		38947D97180E11470046A5B4 /* CGRConcurrentVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRConcurrentVector.h; sourceTree = "<group>"; };
 		38947D98180E11470046A5B4 /* CGRConcurrentSortedVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRConcurrentSortedVector.h; sourceTree = "<group>"; };
@@ -61,8 +119,35 @@
 		38947DA2180E11770046A5B4 /* CGRGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGraph.h; sourceTree = "<group>"; };
 		38947DA3180E11770046A5B4 /* CGRGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGraph.mm; sourceTree = "<group>"; };
 		38947DA4180E11770046A5B4 /* CGRGraph_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGraph_API.h; sourceTree = "<group>"; };
-		38C6FCEE180FAEB0005F512A /* CGRVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRVector.h; sourceTree = "<group>"; };
-		38C6FCEF180FAEB0005F512A /* CGRVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRVector.mm; sourceTree = "<group>"; };
+		38A117401832C253004CE1E3 /* CGRAVLTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRAVLTree.h; sourceTree = "<group>"; };
+		38A117421832C2FE004CE1E3 /* CGRGeometricGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGeometricGraph.h; sourceTree = "<group>"; };
+		38A117431832C2FE004CE1E3 /* CGRGeometricGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGeometricGraph.mm; sourceTree = "<group>"; };
+		38A117461832C337004CE1E3 /* CGRGeometricGraph_BasicTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGeometricGraph_BasicTypes.h; sourceTree = "<group>"; };
+		38A1174B1834448D004CE1E3 /* CGRVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRVector.h; sourceTree = "<group>"; };
+		38ACE5B61BF42A7700C15FEB /* CGRGraph_Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRGraph_Notifications.h; sourceTree = "<group>"; };
+		38AD402F1BF1717600AD3ECF /* CGRGeometricGraph_Constrains.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRGeometricGraph_Constrains.h; sourceTree = "<group>"; };
+		38B358F4186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGeometricGraphDrawing.h; sourceTree = "<group>"; };
+		38B358F5186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGeometricGraphDrawing.mm; sourceTree = "<group>"; };
+		38CF1C2C186CE3D00072CC5D /* CGRDrawableGraph_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRDrawableGraph_API.h; sourceTree = "<group>"; };
+		38CF1C2E186CEEE90072CC5D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		38D09B131B3D284400926E50 /* CGRGeometricGraph_Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRGeometricGraph_Notifications.h; sourceTree = "<group>"; };
+		38D5A11D1A1D28B8005AF331 /* CGRPolygonCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRPolygonCommon.h; sourceTree = "<group>"; };
+		38D6F0191A3F7AFF00575761 /* CGRLinearStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRLinearStack.h; sourceTree = "<group>"; };
+		38D9E3F419F967C7009416B1 /* CGR2DGraphDrawing_BasicTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGR2DGraphDrawing_BasicTypes.h; sourceTree = "<group>"; };
+		38D9E3F619F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGR2DGraphDrawing_BasicFuncs.h; sourceTree = "<group>"; };
+		38D9E3F719F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGR2DGraphDrawing_BasicFuncs.mm; sourceTree = "<group>"; };
+		38D9E3FA19F9713E009416B1 /* CGRGeometricDirGraphDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGeometricDirGraphDrawing.h; sourceTree = "<group>"; };
+		38D9E3FB19F9713E009416B1 /* CGRGeometricDirGraphDrawing.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGeometricDirGraphDrawing.mm; sourceTree = "<group>"; };
+		38E0CE4A1A13CBAC00FDBA3A /* CGRCircularList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRCircularList.h; sourceTree = "<group>"; };
+		38E1251B19F5ADF0005DACA8 /* CGRDirectedGraph_BasicTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRDirectedGraph_BasicTypes.h; sourceTree = "<group>"; };
+		38E1251F19F5BAC2005DACA8 /* CGRDirectedGraph_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRDirectedGraph_API.h; sourceTree = "<group>"; };
+		38E1252019F5BCCD005DACA8 /* CGRDirectedGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRDirectedGraph.h; sourceTree = "<group>"; };
+		38E1252119F5BCCD005DACA8 /* CGRDirectedGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRDirectedGraph.mm; sourceTree = "<group>"; };
+		38E6EB6E1A6324C0008FF780 /* CGRAVLTree_AB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRAVLTree_AB.h; sourceTree = "<group>"; };
+		38EE1B4E1AA624E700DEE5EC /* CGRSimplePolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRSimplePolygon.h; sourceTree = "<group>"; };
+		38EE1B4F1AA624E700DEE5EC /* CGRSimplePolygon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRSimplePolygon.mm; sourceTree = "<group>"; };
+		38EE1B531AA66C9000DEE5EC /* CGRSimplePolygonDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRSimplePolygonDrawer.h; sourceTree = "<group>"; };
+		38EE1B541AA66C9000DEE5EC /* CGRSimplePolygonDrawer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRSimplePolygonDrawer.mm; sourceTree = "<group>"; };
 		38EF90D5182619E500108947 /* CGRConcurrentBST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRConcurrentBST.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CF1C2F186CEEE90072CC5D /* OpenGL.framework in Frameworks */,
 				38947D6B180E11170046A5B4 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +174,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		383D07FD182CA7B0000D64EF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				383D07FE182CA7C8000D64EF /* CGRCommonTypes.mm */,
+				383D07FF182CA7C8000D64EF /* CGRCommonTypes.h */,
+				387EA2F819F8C49B00CB71D3 /* CGRGeometricCommon.h */,
+				387EA2F919F8C49B00CB71D3 /* CGRGeometricCommon.mm */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		388481D1182C4F930062F1E0 /* CGRExplorationGraph */ = {
+			isa = PBXGroup;
+			children = (
+				388481D2182C4FC20062F1E0 /* CGRExplorationGraph_BasicTypes.h */,
+				388481D3182C4FC20062F1E0 /* CGRExplorationGraph_BasicTypes.mm */,
+				383D07F8182CA625000D64EF /* CGRExplorationGraph.h */,
+				383D07F9182CA625000D64EF /* CGRExplorationGraph.mm */,
+				383D07FC182CA637000D64EF /* CGRExplorationGraph_API.h */,
+			);
+			name = CGRExplorationGraph;
+			sourceTree = "<group>";
+		};
 		38947D5D180E11170046A5B4 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +219,7 @@
 		38947D69180E11170046A5B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38CF1C2E186CEEE90072CC5D /* OpenGL.framework */,
 				38947D6A180E11170046A5B4 /* Cocoa.framework */,
 				38947D7F180E11170046A5B4 /* XCTest.framework */,
 				38947D6C180E11170046A5B4 /* Other Frameworks */,
@@ -131,7 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				38947D95180E11390046A5B4 /* Tools */,
+				38A0BA3B186F715900B4B2F1 /* Drawers */,
 				38947D9E180E114D0046A5B4 /* Graphs */,
+				38D9E3F319F943F8009416B1 /* Polygons */,
 				38947D77180E11170046A5B4 /* CGRCore.h */,
 				38947D78180E11170046A5B4 /* CGRCore.m */,
 				38947D71180E11170046A5B4 /* Supporting Files */,
@@ -152,7 +264,7 @@
 		38947D85180E11170046A5B4 /* CGRCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				38947D8B180E11170046A5B4 /* CGRCoreTests.m */,
+				38947D8B180E11170046A5B4 /* CGRCoreTests.mm */,
 				38947D86180E11170046A5B4 /* Supporting Files */,
 			);
 			path = CGRCoreTests;
@@ -172,10 +284,17 @@
 			children = (
 				38947D96180E11470046A5B4 /* CGRDoubleQueue.h */,
 				38947D97180E11470046A5B4 /* CGRConcurrentVector.h */,
+				388481D0182C4E8A0062F1E0 /* CGRConcurrentStaticVector.h */,
 				38947D98180E11470046A5B4 /* CGRConcurrentSortedVector.h */,
 				38EF90D5182619E500108947 /* CGRConcurrentBST.h */,
-				38C6FCEE180FAEB0005F512A /* CGRVector.h */,
-				38C6FCEF180FAEB0005F512A /* CGRVector.mm */,
+				380DE37A1829B21A00716109 /* CGRMemoryManager.mm */,
+				380DE37B1829B21A00716109 /* CGRMemoryManager.h */,
+				38D6F0191A3F7AFF00575761 /* CGRLinearStack.h */,
+				38A117401832C253004CE1E3 /* CGRAVLTree.h */,
+				38E6EB6E1A6324C0008FF780 /* CGRAVLTree_AB.h */,
+				38A1174B1834448D004CE1E3 /* CGRVector.h */,
+				38754B3C18CD790500BF88DB /* CGRCircularVector.h */,
+				38E0CE4A1A13CBAC00FDBA3A /* CGRCircularList.h */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -183,7 +302,12 @@
 		38947D9E180E114D0046A5B4 /* Graphs */ = {
 			isa = PBXGroup;
 			children = (
+				383D07FD182CA7B0000D64EF /* Common */,
+				388481D1182C4F930062F1E0 /* CGRExplorationGraph */,
 				38947D9F180E11630046A5B4 /* CGRGraph */,
+				38A117411832C2C5004CE1E3 /* CGRGeometricGraph */,
+				38E1251A19F5AD12005DACA8 /* CGRDirectedGraph */,
+				38D62C0919F766F500346283 /* CGRGeometricDirectedGraph */,
 			);
 			name = Graphs;
 			sourceTree = "<group>";
@@ -196,8 +320,104 @@
 				38947DA2180E11770046A5B4 /* CGRGraph.h */,
 				38947DA3180E11770046A5B4 /* CGRGraph.mm */,
 				38947DA4180E11770046A5B4 /* CGRGraph_API.h */,
+				38ACE5B61BF42A7700C15FEB /* CGRGraph_Notifications.h */,
 			);
 			name = CGRGraph;
+			sourceTree = "<group>";
+		};
+		38A0BA3B186F715900B4B2F1 /* Drawers */ = {
+			isa = PBXGroup;
+			children = (
+				38EE1B521AA66A3C00DEE5EC /* CGRSimplePolygon */,
+				38D62C0819F7669400346283 /* CGRGeometricDirGraphDrawing */,
+				38B358EF186D39CF00CE42B4 /* CGRGeometricGraphDrawing */,
+				38D67CA8183FF2890012D513 /* CGR2DDrawing */,
+			);
+			name = Drawers;
+			sourceTree = "<group>";
+		};
+		38A117411832C2C5004CE1E3 /* CGRGeometricGraph */ = {
+			isa = PBXGroup;
+			children = (
+				38A117461832C337004CE1E3 /* CGRGeometricGraph_BasicTypes.h */,
+				3882100B183B481E00587F3F /* CGRGeometricGraph_API.h */,
+				38A117421832C2FE004CE1E3 /* CGRGeometricGraph.h */,
+				38A117431832C2FE004CE1E3 /* CGRGeometricGraph.mm */,
+				38D09B131B3D284400926E50 /* CGRGeometricGraph_Notifications.h */,
+				38AD402F1BF1717600AD3ECF /* CGRGeometricGraph_Constrains.h */,
+			);
+			name = CGRGeometricGraph;
+			sourceTree = "<group>";
+		};
+		38B358EF186D39CF00CE42B4 /* CGRGeometricGraphDrawing */ = {
+			isa = PBXGroup;
+			children = (
+				38B358F4186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.h */,
+				38B358F5186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.mm */,
+				38014EA818765B9F0068BF22 /* CGRMapTree.h */,
+			);
+			name = CGRGeometricGraphDrawing;
+			sourceTree = "<group>";
+		};
+		38D62C0819F7669400346283 /* CGRGeometricDirGraphDrawing */ = {
+			isa = PBXGroup;
+			children = (
+				38D9E3FA19F9713E009416B1 /* CGRGeometricDirGraphDrawing.h */,
+				38D9E3FB19F9713E009416B1 /* CGRGeometricDirGraphDrawing.mm */,
+			);
+			name = CGRGeometricDirGraphDrawing;
+			sourceTree = "<group>";
+		};
+		38D62C0919F766F500346283 /* CGRGeometricDirectedGraph */ = {
+			isa = PBXGroup;
+			children = (
+				387EA2F519F8698700CB71D3 /* CGRGeometricDirectedGraph_BasicTypes.h */,
+				387EA2F019F8683B00CB71D3 /* CGRGeometricDirectedGraph_API.h */,
+				387EA2F119F868F500CB71D3 /* CGRGeometricDirectedGraph.h */,
+				387EA2F219F868F500CB71D3 /* CGRGeometricDirectedGraph.mm */,
+			);
+			name = CGRGeometricDirectedGraph;
+			sourceTree = "<group>";
+		};
+		38D67CA8183FF2890012D513 /* CGR2DDrawing */ = {
+			isa = PBXGroup;
+			children = (
+				38CF1C2C186CE3D00072CC5D /* CGRDrawableGraph_API.h */,
+				38D9E3F419F967C7009416B1 /* CGR2DGraphDrawing_BasicTypes.h */,
+				38D9E3F619F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.h */,
+				38D9E3F719F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.mm */,
+			);
+			name = CGR2DDrawing;
+			sourceTree = "<group>";
+		};
+		38D9E3F319F943F8009416B1 /* Polygons */ = {
+			isa = PBXGroup;
+			children = (
+				38D5A11D1A1D28B8005AF331 /* CGRPolygonCommon.h */,
+				38EE1B4E1AA624E700DEE5EC /* CGRSimplePolygon.h */,
+				38EE1B4F1AA624E700DEE5EC /* CGRSimplePolygon.mm */,
+			);
+			name = Polygons;
+			sourceTree = "<group>";
+		};
+		38E1251A19F5AD12005DACA8 /* CGRDirectedGraph */ = {
+			isa = PBXGroup;
+			children = (
+				38E1251B19F5ADF0005DACA8 /* CGRDirectedGraph_BasicTypes.h */,
+				38E1251F19F5BAC2005DACA8 /* CGRDirectedGraph_API.h */,
+				38E1252019F5BCCD005DACA8 /* CGRDirectedGraph.h */,
+				38E1252119F5BCCD005DACA8 /* CGRDirectedGraph.mm */,
+			);
+			name = CGRDirectedGraph;
+			sourceTree = "<group>";
+		};
+		38EE1B521AA66A3C00DEE5EC /* CGRSimplePolygon */ = {
+			isa = PBXGroup;
+			children = (
+				38EE1B531AA66C9000DEE5EC /* CGRSimplePolygonDrawer.h */,
+				38EE1B541AA66C9000DEE5EC /* CGRSimplePolygonDrawer.mm */,
+			);
+			name = CGRSimplePolygon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,13 +427,41 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38947DA5180E11770046A5B4 /* CGRGraph_BasicTypes.h in Headers */,
-				38947DA9180E11770046A5B4 /* CGRGraph_API.h in Headers */,
+				3882100F183B4D9E00587F3F /* CGRVector.h in Headers */,
+				38D09B141B3D293A00926E50 /* CGRGeometricGraph_Notifications.h in Headers */,
+				383D0801182CA7C8000D64EF /* CGRCommonTypes.h in Headers */,
 				38947DA7180E11770046A5B4 /* CGRGraph.h in Headers */,
-				38947D9C180E11470046A5B4 /* CGRConcurrentSortedVector.h in Headers */,
-				38C6FCF0180FAEB0005F512A /* CGRVector.h in Headers */,
+				38947DA9180E11770046A5B4 /* CGRGraph_API.h in Headers */,
+				38D5A11F1A1D28B8005AF331 /* CGRPolygonCommon.h in Headers */,
+				38947DA5180E11770046A5B4 /* CGRGraph_BasicTypes.h in Headers */,
+				38B358F6186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.h in Headers */,
+				387EA2F319F868F500CB71D3 /* CGRGeometricDirectedGraph.h in Headers */,
+				38A117481832C337004CE1E3 /* CGRGeometricGraph_BasicTypes.h in Headers */,
+				387EA2F719F8B76200CB71D3 /* CGRGeometricDirectedGraph_API.h in Headers */,
+				38014EA918765D210068BF22 /* CGRMapTree.h in Headers */,
+				38754B3E18CD7F1700BF88DB /* CGRCircularVector.h in Headers */,
+				38CF1C2D186CE4FA0072CC5D /* CGRDrawableGraph_API.h in Headers */,
+				380F724318DD6BC600860572 /* CGRGeometricGraph_API.h in Headers */,
+				38E0CE4B1A1413D400FDBA3A /* CGRCircularList.h in Headers */,
+				38ACE5B71BF42AF300C15FEB /* CGRGraph_Notifications.h in Headers */,
+				38D9E3FC19F9713E009416B1 /* CGRGeometricDirGraphDrawing.h in Headers */,
+				38D9E3F519F96840009416B1 /* CGR2DGraphDrawing_BasicTypes.h in Headers */,
+				380F724418DD6BDF00860572 /* CGRAVLTree.h in Headers */,
 				38947D9A180E11470046A5B4 /* CGRDoubleQueue.h in Headers */,
+				38E1251D19F5ADF0005DACA8 /* CGRDirectedGraph_BasicTypes.h in Headers */,
+				38A117441832C2FE004CE1E3 /* CGRGeometricGraph.h in Headers */,
+				387EA2F619F8B75D00CB71D3 /* CGRGeometricDirectedGraph_BasicTypes.h in Headers */,
+				38E6EB6F1A632567008FF780 /* CGRAVLTree_AB.h in Headers */,
+				38EE1B551AA66C9000DEE5EC /* CGRSimplePolygonDrawer.h in Headers */,
+				38EE1B501AA624E700DEE5EC /* CGRSimplePolygon.h in Headers */,
+				38D6F01A1A3F813A00575761 /* CGRLinearStack.h in Headers */,
+				38E1252219F5BCCD005DACA8 /* CGRDirectedGraph.h in Headers */,
+				38D9E3F819F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.h in Headers */,
+				380DE37D1829B21A00716109 /* CGRMemoryManager.h in Headers */,
+				387EA2FA19F8C49B00CB71D3 /* CGRGeometricCommon.h in Headers */,
 				38947D9B180E11470046A5B4 /* CGRConcurrentVector.h in Headers */,
+				38AD40301BF1725100AD3ECF /* CGRGeometricGraph_Constrains.h in Headers */,
+				38E1252419F5BDE1005DACA8 /* CGRDirectedGraph_API.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,9 +561,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				38947DA8180E11770046A5B4 /* CGRGraph.mm in Sources */,
-				38C6FCF1180FAEB0005F512A /* CGRVector.mm in Sources */,
+				387EA2FB19F8C49B00CB71D3 /* CGRGeometricCommon.mm in Sources */,
+				383D0800182CA7C8000D64EF /* CGRCommonTypes.mm in Sources */,
+				387EA2F419F868F500CB71D3 /* CGRGeometricDirectedGraph.mm in Sources */,
+				380DE37C1829B21A00716109 /* CGRMemoryManager.mm in Sources */,
+				38A117451832C2FE004CE1E3 /* CGRGeometricGraph.mm in Sources */,
+				38EE1B561AA66C9000DEE5EC /* CGRSimplePolygonDrawer.mm in Sources */,
 				38947DA6180E11770046A5B4 /* CGRGraph_BasicTypes.mm in Sources */,
+				38D9E3F919F9694F009416B1 /* CGR2DGraphDrawing_BasicFuncs.mm in Sources */,
+				38D9E3FD19F9713E009416B1 /* CGRGeometricDirGraphDrawing.mm in Sources */,
+				38B358F7186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.mm in Sources */,
+				38EE1B511AA624E700DEE5EC /* CGRSimplePolygon.mm in Sources */,
 				38947D79180E11170046A5B4 /* CGRCore.m in Sources */,
+				38E1252319F5BCCD005DACA8 /* CGRDirectedGraph.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38947D8C180E11170046A5B4 /* CGRCoreTests.m in Sources */,
+				38947D8C180E11170046A5B4 /* CGRCoreTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,8 +692,16 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CGRCore/CGRCore-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "CGRCore/CGRCore-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -450,7 +716,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CGRCore/CGRCore-Prefix.pch";
 				INFOPLIST_FILE = "CGRCore/CGRCore-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
