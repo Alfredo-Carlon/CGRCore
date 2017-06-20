@@ -3,8 +3,23 @@
 //  CGRCore
 //
 //  Created by Alfredo Cruz on 10/14/13.
-//  Copyright (c) 2013 Alfredo Cruz. All rights reserved.
+//  Copyright (c) 2013 Alfredo Cruz.
 //
+// This file is part of CGRCore.
+
+// CGRCore is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// CGRCore is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with CGRCore.  If not, see <http://www.gnu.org/licenses/>.
+
 
 #ifndef CGRCore_CGRDoubleQueue_h
 #define CGRCore_CGRDoubleQueue_h
@@ -35,10 +50,13 @@ public:
     }
     ~CGRDoubleQueue()
     {
-        int32_t newTicket = OSAtomicIncrement32((volatile int32_t *)&ticketDispenser);
+        int32_t newTicket = OSAtomicIncrement32((volatile int32_t *)
+                                                &ticketDispenser);
         while(!newTicket)
-            newTicket = OSAtomicIncrement32((volatile int32_t *)&ticketDispenser);
-        while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)&headLock));
+            newTicket = OSAtomicIncrement32((volatile int32_t *)
+                                            &ticketDispenser);
+        while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)
+                                        &headLock));
         
         //Free the elements
         while(head != NULL){
@@ -50,19 +68,24 @@ public:
     }
     bool add(QUEUE_DATA newData)
     {
-        struct queueData<QUEUE_DATA> *element = (struct queueData<QUEUE_DATA> *)malloc(sizeof(struct queueData<QUEUE_DATA>));
+        struct queueData<QUEUE_DATA> *element = (struct queueData<QUEUE_DATA> *)
+                malloc(sizeof(struct queueData<QUEUE_DATA>));
         if(element == NULL)
             return NO;
         element ->data = newData;
         element ->next = NULL;
         //Now lock the tail..
-        int32_t newTicket = OSAtomicIncrement32((volatile int32_t *)&ticketDispenser);
+        int32_t newTicket = OSAtomicIncrement32((volatile int32_t *)
+                                                &ticketDispenser);
         while(!newTicket)
-            newTicket = OSAtomicIncrement32((volatile int32_t *)&ticketDispenser);
-        while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)&tailLock));
+            newTicket = OSAtomicIncrement32((volatile int32_t *)
+                                            &ticketDispenser);
+        while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)
+                                        &tailLock));
         //If the tail is NULL then we lock the head also
         if(head == NULL){
-            while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)&headLock));
+            while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)
+                                            &headLock));
             //set the head and the tail
             head = element;
             tail = element;
@@ -82,10 +105,13 @@ public:
     QUEUE_DATA get()
     {
         //Lock the head
-        int32_t newTicket = OSAtomicIncrement32((volatile int32_t *)&ticketDispenser);
+        int32_t newTicket = OSAtomicIncrement32((volatile int32_t *)
+                                                &ticketDispenser);
         while(!newTicket)
-            newTicket = OSAtomicIncrement32((volatile int32_t *)&ticketDispenser);
-        while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)&headLock));
+            newTicket = OSAtomicIncrement32((volatile int32_t *)
+                                            &ticketDispenser);
+        while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)
+                                        &headLock));
         
         if(head == NULL){
             OSAtomicCompareAndSwap32(newTicket,0,(volatile int32_t *)&headLock);
