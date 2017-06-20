@@ -15,6 +15,7 @@
 		383D0800182CA7C8000D64EF /* CGRCommonTypes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 383D07FE182CA7C8000D64EF /* CGRCommonTypes.mm */; };
 		383D0801182CA7C8000D64EF /* CGRCommonTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 383D07FF182CA7C8000D64EF /* CGRCommonTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38754B3E18CD7F1700BF88DB /* CGRCircularVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 38754B3C18CD790500BF88DB /* CGRCircularVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		387A8E1A1EF9DCEE00391D26 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 387A8E191EF9DCEE00391D26 /* README.md */; };
 		387EA2F319F868F500CB71D3 /* CGRGeometricDirectedGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 387EA2F119F868F500CB71D3 /* CGRGeometricDirectedGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		387EA2F419F868F500CB71D3 /* CGRGeometricDirectedGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = 387EA2F219F868F500CB71D3 /* CGRGeometricDirectedGraph.mm */; };
 		387EA2F619F8B75D00CB71D3 /* CGRGeometricDirectedGraph_BasicTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 387EA2F519F8698700CB71D3 /* CGRGeometricDirectedGraph_BasicTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,6 +87,7 @@
 		383D07FE182CA7C8000D64EF /* CGRCommonTypes.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRCommonTypes.mm; sourceTree = "<group>"; };
 		383D07FF182CA7C8000D64EF /* CGRCommonTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRCommonTypes.h; sourceTree = "<group>"; };
 		38754B3C18CD790500BF88DB /* CGRCircularVector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRCircularVector.h; sourceTree = "<group>"; };
+		387A8E191EF9DCEE00391D26 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		387EA2F019F8683B00CB71D3 /* CGRGeometricDirectedGraph_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGRGeometricDirectedGraph_API.h; sourceTree = "<group>"; };
 		387EA2F119F868F500CB71D3 /* CGRGeometricDirectedGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRGeometricDirectedGraph.h; sourceTree = "<group>"; };
 		387EA2F219F868F500CB71D3 /* CGRGeometricDirectedGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CGRGeometricDirectedGraph.mm; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		38947D5D180E11170046A5B4 = {
 			isa = PBXGroup;
 			children = (
+				387A8E191EF9DCEE00391D26 /* README.md */,
 				38947D70180E11170046A5B4 /* CGRCore */,
 				38947D85180E11170046A5B4 /* CGRCoreTests */,
 				38947D69180E11170046A5B4 /* Frameworks */,
@@ -572,6 +575,7 @@
 				38D9E3FD19F9713E009416B1 /* CGRGeometricDirGraphDrawing.mm in Sources */,
 				38B358F7186D4A3D00CE42B4 /* CGRGeometricGraphDrawing.mm in Sources */,
 				38EE1B511AA624E700DEE5EC /* CGRSimplePolygon.mm in Sources */,
+				387A8E1A1EF9DCEE00391D26 /* README.md in Sources */,
 				38947D79180E11170046A5B4 /* CGRCore.m in Sources */,
 				38E1252319F5BCCD005DACA8 /* CGRDirectedGraph.mm in Sources */,
 			);
