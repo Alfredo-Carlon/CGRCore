@@ -8,6 +8,23 @@
 
 //#import <Foundation/Foundation.h>
 #import "CGRGraph_API.h"
+#import "CGRCircularVector.h"
+#import "CGRGraph_BasicTypes.h"
+#import "CGRCircularVector.h"
+
+
 @interface CGRGraph : NSObject <CGRGraph_API>
+{
+    
+    CGRCircularVector<CGRVertex *> *vertices;
+    
+    //NSMutableArray *vertexNotifyList;
+    CGRCircularVector<void *> *notifyList;
+    BOOL notifyChanges;
+    
+    
+}
+
+
 
 @end

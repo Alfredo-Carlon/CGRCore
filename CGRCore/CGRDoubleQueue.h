@@ -24,7 +24,7 @@ class CGRDoubleQueue {
     QUEUE_DATA nullValue;
     
 public:
-    DoubleQueue(QUEUE_DATA nv)
+    CGRDoubleQueue(QUEUE_DATA nv)
     {
         head = NULL;
         tail = NULL;
@@ -33,7 +33,7 @@ public:
         ticketDispenser = 0;
         nullValue = nv;
     }
-    ~DoubleQueue()
+    ~CGRDoubleQueue()
     {
         int32_t newTicket = OSAtomicIncrement32((volatile int32_t *)&ticketDispenser);
         while(!newTicket)
@@ -50,7 +50,7 @@ public:
     }
     bool add(QUEUE_DATA newData)
     {
-        struct queueData<QUEUE_DATA> *element = malloc(sizeof(struct queueData<QUEUE_DATA>));
+        struct queueData<QUEUE_DATA> *element = (struct queueData<QUEUE_DATA> *)malloc(sizeof(struct queueData<QUEUE_DATA>));
         if(element == NULL)
             return NO;
         element ->data = newData;
@@ -61,13 +61,14 @@ public:
             newTicket = OSAtomicIncrement32((volatile int32_t *)&ticketDispenser);
         while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)&tailLock));
         //If the tail is NULL then we lock the head also
-        if(tail == NULL){
+        if(head == NULL){
             while(!OSAtomicCompareAndSwap32(0,newTicket,(volatile int32_t *)&headLock));
             //set the head and the tail
             head = element;
             tail = element;
             //Release both locks tail first
             OSAtomicCompareAndSwap32(newTicket,0,(volatile int32_t *)&tailLock);
+            OSAtomicCompareAndSwap32(newTicket,0,(volatile int32_t *)&headLock);
             return YES;
             
         }else{

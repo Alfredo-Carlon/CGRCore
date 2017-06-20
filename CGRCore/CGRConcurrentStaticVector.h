@@ -1,41 +1,26 @@
 //
-//  CGRConcurrentVector.h
+//  CGRConcurrentStaticVector.h
 //  CGRCore
 //
-//  Created by Alfredo Cruz on 10/14/13.
+//  Created by Alfredo Cruz on 11/7/13.
 //  Copyright (c) 2013 Alfredo Cruz. All rights reserved.
 //
 
-#ifndef CGRCore_CGRConcurrentVector_h
-#define CGRCore_CGRConcurrentVector_h
-
-#define DEFAULT_CHUNK_SIZE 10000
-#define DEFAULT_CHUNKS_LIST_SIZE 1000
-#include "CGRDoubleQueue.h"
+#ifndef CGRCore_CGRConcurrentStaticVector_h
+#define CGRCore_CGRConcurrentStaticVector_h
+#define DEFAULT_CHUNK_SIZE 64
+#define DEFAULT_MIDDLE_LAYER_SIZE 128
+#define DEFAULT_CHUNK_LIST_SIZE 123
+#include "CGRMemoryManager.h"
 
 template <class VECTOR_DATA>
 class CGRConcurrentVector
 {
 private:
-    uint32_t chunkSize; //Size, in number of elements of each chunk
-    int32_t numberOfChunks;
-    int32_t vectorSize;
-    VECTOR_DATA **firstChunk;
-    void **chunksList; //The list of chunks
-    uint32_t maxNumberOfChunks; //The max number of chunks that chunksList can hold...
-    
-    //Holder of free indices.. this indices are of already freed elements
-    //A thread that is going it add a vertex to the vector is expected to
-    //First check this queue since its space that is already in memory
-    CGRDoubleQueue<uint32_t> freeSlots = CGRDoubleQueue<uint32_t>(-1);
-    //The next index at the end of the vector that is "avaible".
-    //The space may not be present. The thread is expected to find out and
-    //alloc memory for a new chunk.
-    int32_t nextIndex;
+    uint32_t chunkListSize;
+    VECTOR_DATA ***chunkList;
     
     
-    //Variable that indicates the memory footprint of the data type
-    uint32_t memoryFootprint;
     
     
     //For adding and global reading
@@ -196,154 +181,29 @@ private:
     
     void initVector()
     {
-        uint32_t numberOfChunks = vectorSize / chunkSize + 1;
-        if(numberOfChunks > DEFAULT_CHUNKS_LIST_SIZE){
-            maxNumberOfChunks = numberOfChunks;
-        }else{
-            maxNumberOfChunks = DEFAULT_CHUNKS_LIST_SIZE;
-        }
         
-        chunksList = (void **)malloc(sizeof(VECTOR_DATA **)*maxNumberOfChunks);
-        if(!chunksList){
-            //We may have not enough memory so we "report" it.. TO DO
-            return;
-        }
-        
-        memoryFootprint +=sizeof(VECTOR_DATA **)*maxNumberOfChunks;
-        
-        for(unsigned int i=0; i != maxNumberOfChunks; i++){
-            chunksList[i] = NULL;
-        }
-        //Alloc the chunks
-        firstChunk = (VECTOR_DATA **)malloc((sizeof(VECTOR_DATA *)*(chunkSize)));
-        if(!firstChunk){
-            //We may have not enough memory so we "report" it.. TO DO
-            return;
-        }
-        
-        memoryFootprint +=sizeof(VECTOR_DATA *)*chunkSize;
-        
-        for(unsigned int i=0; i != chunkSize; i++){
-            firstChunk[i] = NULL; //Try on demand alloc
-        }
-        chunksList[0] = firstChunk;
-        for(unsigned int i=1; i != numberOfChunks; i++){
-            VECTOR_DATA **lastChunk = (VECTOR_DATA **)malloc((sizeof(VECTOR_DATA *)*(chunkSize)));
-            
-            memoryFootprint +=sizeof(VECTOR_DATA *)*chunkSize;
-            
-            chunksList[i] = lastChunk;
-            for(unsigned int j=0; j != chunkSize; j++){
-                lastChunk[j] = NULL;
-            }
-        }
     }
     
 public:
-    CGRConcurrentVector(){
-        memoryFootprint = sizeof(this);
-        maxNumberOfChunks = DEFAULT_CHUNKS_LIST_SIZE;
-        chunksList = (void **)malloc(sizeof(VECTOR_DATA **)*maxNumberOfChunks);
-        if(!chunksList){
-            //We may have not enough memory so we "report" it.. TO DO
-            return;
-        }
+    CGRConcurrentStaticVector(){
         
-        memoryFootprint += sizeof(VECTOR_DATA **)*maxNumberOfChunks;
-        
-        for(unsigned int i=0; i != maxNumberOfChunks; i++){
-            chunksList[i] = NULL;
-        }
-        firstChunk = NULL;
-        firstChunk = (VECTOR_DATA **)malloc(sizeof(VECTOR_DATA *)*DEFAULT_CHUNK_SIZE);
-        
-        memoryFootprint +=sizeof(VECTOR_DATA *)*DEFAULT_CHUNK_SIZE;
-        
-        chunkSize = DEFAULT_CHUNK_SIZE;
-        if(!firstChunk){
-            //We may have not enough memory so we "report" it.. TO DO
-            return;
-        }
-        for(unsigned int i=0; i != chunkSize; i++){
-            firstChunk[i] = NULL; //Try on demand alloc
-        }
-        chunksList[0] = firstChunk;
-        numberOfChunks = 1;
-        vectorSize = DEFAULT_CHUNK_SIZE;
-        activeGlobals = 0;
-        activeLocals = 0;
-        nowServing = 0;
-        //freeSlots = new DoubleQueue<uint32_t>(-1);
         return;
     }
     
-    CGRConcurrentVector(uint32_t vectorSize){
-        memoryFootprint = sizeof(this);
-        chunkSize = DEFAULT_CHUNK_SIZE;
-        this ->vectorSize = vectorSize;
-        initVector();
-        activeGlobals = 0;
-        activeLocals = 0;
-        nowServing = 0;
+    CGRConcurrentStaticVector(uint32_t vectorSize){
+        
     }
     
-    CGRConcurrentVector(uint32_t vectorSize, uint32_t chunkSize){
-        memoryFootprint = sizeof(this);
-        this ->chunkSize = chunkSize;
-        this ->vectorSize = vectorSize;
-        initVector();
-        activeGlobals = 0;
-        activeLocals = 0;
-        nowServing = 0;
-    }
-    
-    ~CGRConcurrentVector()
+    ~CGRConcurrentStaticVector()
     {
         
     }
     
-    uint32_t add(VECTOR_DATA *data)
+    void addAtIndex(VECTOR_DATA *data,uint32_t index)
     {
         //First register as local thread
         startLocal();
-        //Now check the queue for a free space
-        uint32_t nextSpace = freeSlots.get();
-        if(nextSpace == (uint32_t)-1){
-            nextSpace = OSAtomicIncrement32((volatile int32_t *)&nextSpace);
-        }
-        //Now we have a space avaible... check in which chunk the space is..
-        uint32_t holdingChunk = nextSpace/chunkSize;
         
-        //For now assume that we have enough space... so holdingChunk always points to a valid chunk
-        //First try to check if its null.. if so try to change it to 0x1 so we reserve memory..
-        
-        if(OSAtomicCompareAndSwapPtr(NULL, (void *)0x1, (void * volatile *)(chunksList[holdingChunk]))){
-            //If we got here then we are the first ones to reserve memory..
-            //We do it and then set it up..
-            VECTOR_DATA **newChunk = (VECTOR_DATA **)malloc((sizeof(VECTOR_DATA *)*(chunkSize)));
-            if(!newChunk){
-                //We may have not enough memory so we "report" it.. TO DO
-                return -1;
-            }
-            
-            memoryFootprint += sizeof(VECTOR_DATA *)*chunkSize;
-            
-            for(unsigned int i=0; i != chunkSize; i++){
-                newChunk[i] = NULL; //Try on demand alloc
-            }
-            //Set the new chunk in the list so other threads can also use it
-            OSAtomicCompareAndSwapPtr((void *)0x1, (void *)newChunk, (void * volatile *)(chunksList[holdingChunk]));
-            uint32_t localIndex = nextSpace % chunkSize;
-            newChunk[localIndex] = data;
-            return nextSpace;
-        }
-        //If we didn't reserve memory then try to get the add
-        while(OSAtomicCompareAndSwapPtr((void *)0x1, (void *)0x1, (void * volatile *)(chunksList[holdingChunk])));
-        //After just read the add and update the data
-        VECTOR_DATA **chunk = (VECTOR_DATA **)chunksList[holdingChunk];
-        uint32_t localIndex = nextSpace % chunkSize;
-        chunk[localIndex] = data;
-        return nextSpace;
     }
     
     VECTOR_DATA *dataAtIndex(uint32_t index){
@@ -352,35 +212,14 @@ public:
         //Get the chunk number for the data
         uint32_t holdingChunk = index/chunkSize;
         
-        if(holdingChunk > maxNumberOfChunks){
-            //Throw an exception
-            NSException *outOfBoundsException = [NSException exceptionWithName:@"CGRIndexOutOfBoundsException" reason:@"The argument index for dataAtIndex is out of bounds" userInfo:nil];
-            @throw outOfBoundsException;
-        }
-        //Now check if the chunk is valid..
-        //To check it first look if chunksList[holdingChunk] is not null or 0x1
-        if(OSAtomicCompareAndSwapPtr(NULL, NULL, (void * volatile *)(chunksList[holdingChunk]))){
-            //Chunk is empty so we throw an out of bounds exception
-            NSException *outOfBoundsException = [NSException exceptionWithName:@"CGRIndexOutOfBoundsException" reason:@"The argument index for dataAtIndex is out of bounds" userInfo:nil];
-            @throw outOfBoundsException;
-        }
-        if(OSAtomicCompareAndSwapPtr((void *)0x1, (void *)0x1, (void * volatile *)(chunksList[holdingChunk]))){
-            //Chunk is empty so we throw an out of bounds exception
-            NSException *outOfBoundsException = [NSException exceptionWithName:@"CGRIndexOutOfBoundsException" reason:@"The argument index for dataAtIndex is out of bounds" userInfo:nil];
-            @throw outOfBoundsException;
-        }
-        //Now check if chunksList[holdingChunk][localIndex] is not null
-        uint32_t localIndex = index % chunkSize;
-        if(((VECTOR_DATA **)(chunksList[holdingChunk]))[localIndex] != NULL){
-            return ((VECTOR_DATA **)(chunksList[holdingChunk]))[localIndex];
-        }else{
-            //Container is empty so we throw an out of bounds exception
-            NSException *outOfBoundsException = [NSException exceptionWithName:@"CGRIndexOutOfBoundsException" reason:@"The argument index for dataAtIndex is out of bounds" userInfo:nil];
-            @throw outOfBoundsException;
-        }
+        NSException *outOfBoundsException = [NSException exceptionWithName:@"CGRIndexOutOfBoundsException" reason:@"The argument index for dataAtIndex is out of bounds" userInfo:nil];
+        @throw outOfBoundsException;
+        
+        return NULL;
         
     }
     
 };
+
 
 #endif

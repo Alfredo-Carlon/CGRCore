@@ -7,23 +7,61 @@
 //
 
 //#import <Foundation/Foundation.h>
-#import "CGRGraph_BasicTypes.h"
+//#import "CGRGraph_BasicTypes.h"
+#import <CGRCore/CGRCommonTypes.h>
+#import <CGRCore/CGRVector.h>
+#import <CGRCore/CGRCircularVector.h>
+#import <CGRCore/CGRGraph_Notifications.h>
 
 @protocol CGRGraph_API <NSObject>
+
+#pragma mark Graph Creation
+-(id)init;
+-(id)initWithVerticesCapacity:(uint32_t)verticesInitialCapacity;
+
 #pragma mark -
 #pragma mark Vertices Basics
 //Adds a vertex
 -(uint32_t)addVertex;
+//Returns the number of vertices in the graph
+-(uint32_t)vertexSetSize;
 //Returns the neighbors for a vertex
-
-
-//Adds an edge
--(_CGREdge) addEdge:(_CGREdge)edge;
+-(CGRCircularVector<uint32_t> *)neighborsForVertex:(uint32_t)vertex;
+//Returns the degree for the given vertex
+-(uint32_t)vertexDegree:(uint32_t)vertex;
+//Returns true if both vertices are neighbors, false otherwise
+-(BOOL) vertex:(uint32_t)vertex1 isNeighborOf:(uint32_t)vertex2;
 //Removes a vertex
 -(void)removeVertex:(uint32_t)vertex;
-//Removes an Edge
--(void)removeEdge:(_CGREdge)edge;
+//Removes all neighbors of a vertex
+-(void)removeAllVertexNeighbors:(uint32_t)vertex;
+//Removes all vertices
+-(void)removeAllVertices;
+#pragma mark -
+#pragma mark Edges Basics
 
+//Adds an edge
+-(void) addEdge:(CGREdge)edge;
+//Removes an Edge
+-(void)removeEdge:(CGREdge)edge;
+#pragma mark -
+
+#pragma mark Edges Custom Data
+-(void)addCustomData:(void *)data toEdge:(CGREdge)edge withNumber:(uint32_t)number;
+-(void *)customDataForEdge:(CGREdge)edge withNumber:(uint32_t)number;
+-(void *)removeCustomDataForEdge:(CGREdge)edge withNumber:(uint32_t)number;
+#pragma mark -
+
+#pragma mark Vertices Custom Data
+-(void)addCustomData:(void *)data toVertex:(uint32_t)vertex withNumber:(uint32_t)number;
+-(void *)customDataForVertex:(uint32_t)vertex withNumber:(uint32_t)number;
+-(void *)removeCustomDataForVertex:(uint32_t)vertex withNumber:(uint32_t)number;
+#pragma mark -
+
+#pragma mark Notifications
+-(void)addNotifiy:(id <CGRGraph_Notifications>) newNotifyObj;
+-(void)removeNotify:(id <CGRGraph_Notifications>) newNotifyObj;
+#pragma mark -
 /*
 #pragma mark -
 #pragma mark Vertices Advanced
